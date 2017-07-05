@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get 'messages/show'
 
-  get 'conversations/show'
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+  end
 
   root 'home#index'
 
