@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'messages/show'
+
+  get 'conversations/show'
+
   root 'home#index'
 
   devise_for :users
